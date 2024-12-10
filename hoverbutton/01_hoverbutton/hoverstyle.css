@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   min-height: 100vh;
+
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.btn:hover {
+    background-color: red;
+    transform: scale(1.3);
+
+
+}
