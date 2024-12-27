@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+
+<body>
+  <header>
+    <div class="menu-icon">
+      &#9776; <!-- Unicode for Hamburger Menu -->
+    </div>
+    <h1 class="checkout">Checkout</h1>
+    <div><img src="./assets/ninjahead.svg" alt="ninjahead-img" /> </div>
+  </header>
+  <main>
+    <h3>Varor i korg</h3>
+    <div class="cart-items">
+     
+      <article class="card">
+        <img src="./assets/char-7.png" class="cardimg" />
+        <section>
+          <h2>Fotograf</h2>  
+          <button class="cardbtn">Ta bort från varukorg</button>
+        </section>
+      </article>
+      <article class="card">
+        <img src="./assets/char-9.png" class="cardimg" />
+        <section>
+          <h2>Personlig tränare</h2>
+          <button class="cardbtn">Ta bort från varukorg</button>
+        </section>
+      </article>
+    </div>
+
+
+    <!-- Order summary-->
+
+    <section class="order-summary">
+      <table>
+        <thead>
+          <tr>
+            <th>Vara</th>
+            <th>Antal</th>
+            <th>Pris</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Poster Fotograf</td>
+            <td>1</td>
+            <td>179 sek</td>            
+          </tr>
+          <tr>
+            <td>Poster Crossfit</td>
+            <td>1</td>
+            <td>179 sek</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="total">
+            <td colspan="2">Totalt</td>
+            <td>358 sek</td>
+          </tr>
+        </tfoot>
+      </table>
+   
+      <button class="Gimmie">Gimmie Gimmie Gimmie</button>
+      
+    </section>
+  </main>
+  <footer class="footer">
+    <article>
+      <h2>Nav</h2>
+      <ul>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>Address</h2>
+      <p>
+          Plinkeplonkvägen 32
+          <br>888 81 Klonkberga
+      </p>
+      
+    </article>
+    <article>
+      <h2>Social media</h2>
+      <img src="./assets/logo-twitter@2x.png"   alt="twitter"/>
+      <img src="./assets/logo-facebook@2x.png"  alt="facebook"/>
+      <img src="./assets/logo-linkedin@2x.png"  alt="linkedin"/>
+      <img src="./assets/logo-instagram@2x.png" alt="instagram"/>
+      
+    </article>
+  </footer>
+</body>
+
+</html>
