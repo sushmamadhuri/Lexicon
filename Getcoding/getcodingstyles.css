@@ -1,0 +1,164 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-BlackItalic.ttf');
+}
+
+/* Header with Background Image */
+.hero {
+    background: url('../assets/images/getcoding.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px 0;
+    height: 25em;
+}
+
+nav {
+
+    background-color: white;
+    padding: 10px;
+    margin: 10px 30px;
+}
+
+nav:hover {
+    border: 4px solid rgb(93, 93, 219);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+/* bottompart--btm */
+.btm {
+    background-color: #445a6f;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    height: 25em;
+}
+
+.btm p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    animation: animate 4s infinite;
+}
+
+@keyframes animate {
+    0% {
+
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.5;
+        color: #fbf7f7;
+    }
+
+    50% {
+        opacity: 1;
+        color: #2aa61e;
+    }
+
+    70% {
+        opacity: 1.5;
+        color: rgb(117, 117, 248);
+    }
+
+    90% {
+        opacity: 2;
+        color: #eeea72;
+    }
+
+    
+    100% {
+        opacity: 2;
+        color: #f210aa;
+    }
+}
+
+.btm p:hover {
+
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+.btm-button {
+    display: inline-block;
+    background: #5B2E48;
+    color: white;
+    font-family: 'Roboto';
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: lighter;
+    border-radius: 5px;
+    transition: background-color 1s ease;
+}
+
+.btm-button:hover {
+
+
+    text-decoration: underline;
+    text-decoration-color: blue;
+    border: 2px solid blue;
+    background-color: #8280ec;
+    transition: all 2s;
+    transform: scale(1.5);
+}
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    nav
+    {
+        background-color: transparent;
+    }
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .btm p {
+        font-size: 1.2rem;
+    }
+}
