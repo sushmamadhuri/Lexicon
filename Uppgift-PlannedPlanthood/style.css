@@ -1,0 +1,789 @@
+/* reset from Kevin Powell edit if you like */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+html {
+    color-scheme: dark light;
+}
+
+/* min body height */
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* make headings wrap better */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+    text-wrap: pretty;
+    max-width: 55ch;
+}
+
+/* for container queries, landmarks as containers */
+body> :is(header, footer),
+main {
+    container-type: inline-size;
+}
+
+/* remove list style but keep it as list for Safari browser - use with <ul role="list"> */
+[role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Theme */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(0, 0%, 87%);
+    --clr-neutral-300: hsl(0, 0%, 57%);
+    --clr-neutral-400: hsl(0, 0%, 27%);
+    --clr-neutral-800: hsl(0, 0%, 17%);
+    --clr-neutral-900: hsl(0, 0%, 12%);
+
+    --clr-green-100: hsl(169, 11%, 93%);
+    --clr-green-200: hsl(169, 51%, 58%);
+    --clr-green-400: hsl(169, 86%, 28%);
+    --clr-green-800: hsl(169, 86%, 12%);
+    --clr-green-900: hsl(169, 80%, 12%);
+
+    --clr-robust: hsl(221, 63%, 32%);
+    --clr-green: hsl(110, 63%, 32%);
+    --clr-flower: hsl(2, 92%, 33%);
+    --clr-colorful: hsl(303, 55%, 47%);
+    --clr-sunloving: hsl(27, 88%, 33%);
+    --clr-air: hsl(180, 84%, 27%);
+    --clr-decorative: hsl(278, 79%, 40%);
+    --clr-edible: hsl(68, 61%, 30%);
+    --clr-easy: hsl(224, 86%, 58%);
+    --clr-fragrant: hsl(327, 51%, 47%);
+    --clr-fast: hsl(218, 11%, 34%);
+
+    --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    --font-base: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    --fw-900: 900;
+
+    --fs-100: 0.625rem;
+    --fs-200: 0.75rem;
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3rem;
+
+    --clr-accent: var(--clr-green-400);
+    --clr-accent-light-1: var(--clr-green-100);
+
+    --clr-primary-light-1: var(--clr-neutral-100);
+    --clr-primary-light-2: var(--clr-neutral-200);
+    --clr-primary-light-3: var(--clr-neutral-300);
+    --clr-primary: var(--clr-neutral-400);
+    --clr-primary-dark: var(--clr-neutral-800);
+
+    --fw-regular: var(--fw-400);
+    --fw-medium: var(--fw-500);
+    --fw-semi-bold: var(--fw-600);
+    --fw-bold: var(--fw-700);
+    --fw-x-bold: var(--fw-900);
+}
+
+/* Utilities */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Composition */
+.flow>*+* {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+/* Global/base */
+h2,
+h3 {
+    font-weight: var(--fw-bold);
+    line-height: 1;
+}
+
+h2 {
+    font-size: var(--fs-700);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-semi-bold);
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-accent);
+
+    &:hover,
+    &:focus-visible {
+        color: var(--clr-primary-light-1);
+        text-decoration: underline;
+    }
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--clr-accent-light-1);
+    color: var(--clr-primary-dark);
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+
+}
+
+
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+.logotext {
+    line-height: 0.8rem;
+    width: 6rem;
+    margin: 0;
+}
+
+.logo-container {
+
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    gap: 0.7rem;
+}
+
+.full-width {
+    background-color: var(--clr-neutral-100);
+    width: 100%;
+    margin: 0 0;
+
+}
+
+.header-container {
+    display: flex;
+    margin: 0 20rem;
+    align-items: center;
+    color: var(--clr-accent);
+
+}
+
+
+.header-righttext {
+    display: flex;
+    margin-left: auto;
+
+}
+
+.header-righttext nav {
+    display: flex;
+    gap: 2rem;
+
+}
+
+
+.header-righttext nav a:hover {
+    text-decoration: none;
+    background-color: #8dd0c2;
+    color: var(--clr-neutral-100);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    width: 100%;
+}
+
+.Uppskattade-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 20rem;
+    text-align: center;
+    align-items: center;
+    width: 45rem;
+}
+
+.images-container {
+    background-color: var(--clr-neutral-100);
+    width: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 1rem;
+    gap: 0px;
+
+    .pic-mob {
+        display: none;
+    }
+}
+
+.picture-1 {
+    grid-row: 1 / span 2;
+}
+
+.picture-2 {
+    display: flex;
+}
+
+.send-email-container {
+    margin: 0 30rem;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+
+}
+
+.send-email-container h3 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+
+}
+
+.send-email-container input {
+    border-radius: 3rem;
+    padding: 0.2rem 5rem 0.2rem 0.2rem;
+    width: 16rem;
+    text-align: center;
+
+}
+
+.send-email-container button {
+    background-color: var(--clr-accent);
+    border-radius: 3rem;
+    color: var(--clr-neutral-100);
+    width: 5rem;
+    margin: 0.1rem 0.1rem 0.1rem -5.6rem;
+    cursor: pointer;
+}
+
+
+.planting-div {
+    flex-shrink: 0;
+    background-color: var(--clr-accent);
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid rgba(0, 135, 110, 0.5);
+}
+
+.plantingsvg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.cardsection {
+    margin: 2rem 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+
+}
+
+.card {
+    background-color: var(--clr-neutral-100);
+    width: auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card h3 {
+    margin: 1rem 0rem;
+}
+
+.card p {
+    margin: 1rem 0rem;
+    line-height: 1rem;
+    font-size: small;
+}
+
+button {
+    border: none;
+}
+
+.card button {
+    background-color: var(--clr-accent);
+    border-radius: 1rem;
+    color: var(--clr-neutral-100);
+    margin: 0.2rem 0rem;
+    font-size: small;
+    font-weight: var(--fw-semi-bold);
+    padding: 0.5rem;
+
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+
+.avtar-container {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    margin-top: auto;
+}
+
+.avtar-container p {
+    margin: 0;
+}
+
+.card-buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.2rem;
+    margin-top: 0.4rem;
+}
+
+
+
+.odlingar-container {
+    margin: 0 22rem;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+}
+
+.odlingar-button {
+    background-color: var(--clr-accent);
+    color: var(--clr-neutral-100);
+    border-radius: 2rem;
+    float: right;
+    padding: 0.7rem;
+    margin: 1rem;
+}
+
+
+
+.seedlingimage-article {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--clr-accent);
+    /* Semi-transparent green background */
+    border-radius: 50%;
+    /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid rgba(0, 135, 110, 0.5);
+}
+
+.seedlingpotonImage {
+
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.background-image {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.pot {
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+}
+
+.seedling-image {
+    width: 7rem;
+    height: 7rem;
+
+}
+
+.footer {
+
+    background-color: var(--clr-accent);
+    width: 100%;
+
+}
+
+.footer-container {
+    color: var(--clr-neutral-100);
+    display: flex;
+    gap: 1rem;
+    margin: 0 20rem;
+    padding: 2rem;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-right {
+    margin-left: auto;
+}
+
+.footer-right nav ul a {
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+}
+
+.Hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width:600px) {
+    .header-container {
+        margin: 0 1rem;
+
+    }
+
+    .header-righttext {
+        display: none;
+
+    }
+
+    .Hamburger-menu {
+        display: block;
+        margin-left: auto;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .Uppskattade-container {
+
+        margin: 2rem 0;
+
+        max-width: 20rem;
+
+    }
+
+    .send-email-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        padding: 2rem;
+
+    }
+
+    .sendEmail-left {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cardsection {
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .seedlingpotonImage {
+        .background-image {
+            width: 26rem;
+            height: 20rem;
+        }
+
+        .pot {
+            width: 10rem;
+            height: 10rem;
+
+
+        }
+
+    }
+
+    .images-container {
+        background-color: var(--clr-neutral-100);
+        width: 100%;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-top: 1rem;
+        gap: 0px;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .picture-2 {
+            display: none;
+        }
+
+        .pic-mob {
+            display: block;
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+
+    .picture-1 {
+        grid-row: auto;
+    }
+
+    .odlingar-container {
+        margin: 0;
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+
+    }
+
+    .footer {
+
+        background-color: var(--clr-accent);
+        width: 100%;
+        min-height: 15rem;
+        color: var(--clr-neutral-100);
+        line-height: 1.5rem;
+
+    }
+
+    .footer-container {
+        display: block;
+        margin: 0;
+
+    }
+
+    .footer-left {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-right {
+        margin-left: 0;
+    }
+
+    .footer-right nav ul a {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width:601px) and (max-width:1025px) {
+    .header-container {
+        margin: 0 1rem;
+
+    }
+
+    .header-righttext {
+        display: none;
+
+    }
+
+    .Hamburger-menu {
+        display: block;
+        margin-left: auto;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .Uppskattade-container {
+
+        margin: 2rem 0;
+
+    }
+
+    .send-email-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        padding: 3rem;
+
+    }
+
+    .sendEmail-left {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cardsection {
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .seedlingpotonImage {
+        .background-image {
+            width: 26rem;
+            height: 20rem;
+        }
+
+        .pot {
+            width: 10rem;
+            height: 10rem;
+
+
+        }
+
+    }
+
+    .images-container {
+        background-color: var(--clr-neutral-100);
+        width: 100%;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: 1rem;
+        gap: 0px;
+
+        img {
+            width: 240px;
+            height: 240px;
+        }
+
+        .picture-2 {
+            display: none;
+        }
+
+        .pic-mob {
+            display: block;
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+
+    .picture-1 {
+        grid-row: auto;
+    }
+
+    .odlingar-container {
+        margin: 0;
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+
+    }
+
+    .footer {
+
+        background-color: var(--clr-accent);
+        width: 100%;
+        min-height: 15rem;
+        color: var(--clr-neutral-100);
+        line-height: 1.5rem;
+
+    }
+
+    .footer-container {
+        display: block;
+        margin: 0;
+
+    }
+
+    .footer-left {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-right {
+        margin-left: 0;
+    }
+
+    .footer-right nav ul a {
+        display: none;
+    }
+
+}
